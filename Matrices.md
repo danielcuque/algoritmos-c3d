@@ -63,15 +63,15 @@ j = 6
 
 k = array[9][7][array[10][8][15]]
 
-Por lo tanto debemos de cuatro veces al arreglo *array*.
+Por lo tanto debemos de acceder cuatro veces al arreglo *array*.
 
-El cuarto arreglo que se obtiene es: array[10][8][15]
+- El cuarto arreglo que se obtiene es: array[10][8][15]
 
-El tercer arreglo que se obtiene es: array[9][7][array[10][8][15]]
+- El tercer arreglo que se obtiene es: array[9][7][array[10][8][15]]
 
-El segundo arreglo que se obtiene es: array[8][7][14]
+- El segundo arreglo que se obtiene es: array[8][7][14]
 
-El primer arreglo que se obtiene es: array[8][6][array[9][7][array[10][8][15]]]
+- El primer arreglo que se obtiene es: array[8][6][array[9][7][array[10][8][15]]]
 
 Donde:
 
