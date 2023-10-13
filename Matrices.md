@@ -55,16 +55,22 @@ for i in 7...12 {
 array[8][6][array[9][7][array[10][8][15]]] = array[8][7][14]
 ```
 
-Le quiere modificar el arreglo *array* en la posición
+Se quiere modificar el arreglo *array* en la posición
+
 i = 8
+
 j = 6
+
 k = array[9][7][array[10][8][15]]
 
 Por lo tanto debemos de cuatro veces al arreglo *array*.
 
 El cuarto arreglo que se obtiene es: array[10][8][15]
+
 El tercer arreglo que se obtiene es: array[9][7][array[10][8][15]]
+
 El segundo arreglo que se obtiene es: array[8][7][14]
+
 El primer arreglo que se obtiene es: array[8][6][array[9][7][array[10][8][15]]]
 
 Donde:
