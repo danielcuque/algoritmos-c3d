@@ -75,9 +75,10 @@ Por lo tanto debemos de acceder cuatro veces al arreglo *array*.
 
 Donde:
 
-i1 = 7  | i2 = 4 | i3 = 12
-s1 = 12 | s2 = 8 | s3 = 24
-n1 = 6  | n2 = 5 | n3 = 13
+| i1 = 7  | i2 = 4 | i3 = 12 |
+|---------|--------|---------|
+| s1 = 12 | s2 = 8 | s3 = 24 |
+| n1 = 6  | n2 = 5 | n3 = 13 |
 
 Para calcular *n* se usa la siguiente fórmula:
 
