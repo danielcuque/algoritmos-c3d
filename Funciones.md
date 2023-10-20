@@ -292,8 +292,8 @@ Las variables temporales pueden ser globales y las podemos sobreescribir
 
 0 - int num - parámetro 1
 1 - int     - retorno
-
-
+2 - int     - t4        Temporales reservados
+3 - int     - t6
 
 ```
 function int factorial(int num){
@@ -307,37 +307,48 @@ function int factorial(int num){
 
 ```c
 void factorial() {
-    t1 = p + 0     // Indice num
+    t1 = p + 0      // Indice num
     t2 = stack[t1]  // Valor num
 
     if t2 <= 0 goto L1
     goto L2
     L1:
-    t3 = p + 1
-    stack[t3] = 1
-    
-    
-    goto L3
-    goto L4
-    
-    L2:
-    t4 = p + 1      // Indice de retorno
-    t5 = p + 0      // Indice num
-    t6 = stack[t5]  // Valor num
-    t7 = p + 2      // p + tamaño de la función en el stack
-    t8 = t7 + 0
-    t9 = p + 0      // Indice num
-    t10 = stack[t9] // Valor num
-    t11 = t10 - 1   // Valor num - 1
-    stack[t8] = t11 // Parametro 1
-    p = p * 2;
-    factorial();
-    t12 = p + 1;
-    t13 = stack[t12] // Valor de retorno de factorial
-    p = p - 2
-    t14 = t6 * t13   // Valor num * factorial(num-1)
+    t3 = p + 1      // Indice de retorno
+    stack[t3] = 1   // retorno = 1
+    goto L3         // Salto a la etiqueta de retorno
+    goto L4         // Salto del else
+    L2:             // Etiqueta de else
 
-    stack[t4] = t14  // retorno = num * factorial(num-1)
+    t4 = p + 1     // Indice de retorno
+    t5 = p + 0     // Indice n
+    t6 = stack[t5] // Valor n
+    
+    t7 = p + 2 
+    stack[t7] = t4  // Guardamos los temporales que se ejecutan despues de la llamada recursiva
+
+    t8 = p + 3
+    stack[t8] = t6
+
+    t9 = p + 4
+    t10 = t9 + 0
+    t11 = p + 0
+    t12 = stack[t11]    // Valor 
+    t13 = t12 - 1
+    stack[t10] = t13
+
+    p = p + 4
+    factorial();
+
+    t14 = p + 1
+    t15 = stack[t14]    // Valor de retorno de la llamada recursiva
+    p = p - 4
+    t16 = p + 2
+    t4 = stack[t16]     // Valor de retorno de la llamada recursiva
+    t17 = p + 3
+    t6 = stack[t17]     
+
+    t18 = t15 * t6      // Valor de retorno de la llamada recursiva * n
+    stack[t4] = t18     // retorno = Valor de retorno de la llamada recursiva * n
     goto L5;
     L4:
     L3:
